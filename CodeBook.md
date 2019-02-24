@@ -3,21 +3,21 @@
 This script initially set the working directory and download the zip file with the data set. 
 The zip file is then extracted to folder UCI HAR Dataset
 
-Per the description of the data set, we have two sets of data. One training set and one test set. Each set has three files.
-train.txt - Training set.
-subject_train.txt - Identifies the subject who performed the training/test.
-y_train.txt - Training labels.
+Per the description of the data set, we have two sets of data. One training set and one test set. Each set has three files.  
+> train.txt - Training set.  
+> subject_train.txt - Identifies the subject who performed the training/test.  
+> y_train.txt - Training labels.  
 
 As part of preprocessing, we read each file to a data table.
 
-The variables used in this step are:
-X_train : values of variables in train
-y_train : activity ID in train
-subject_train : subject IDs for train
+The variables used in this step are:  
+X_train : values of variables in train  
+y_train : activity ID in train  
+subject_train : subject IDs for train  
 
-X_test : values of variables in test
-y_test : activity ID in test
-subject_test : subject IDs for test
+X_test : values of variables in test  
+y_test : activity ID in test  
+subject_test : subject IDs for test  
 
 
 # 2. Merges the training and the test sets to create one data set.
@@ -57,8 +57,7 @@ The column names of data at this point has names like mean() , std() etc.
 The braces associated with the the function are removed.
 
 
-# 6. From the data set in step 4, creates a second, independent tidy data set 
-#    with the average of each variable for each activity and each subject.
+# 6. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 Group_by function from dplyr package is used here to group the records on each activity and each subject.
 The to calculate mean of all values, summarize_all operation is invoked on the grouped data.
 The resultant set is written on to file: tidy_data.txt
